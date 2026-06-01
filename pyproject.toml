@@ -1,0 +1,50 @@
+[project]
+name = "cv-uncertainty-estimation"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "SaharaSurfer",email = "topbo3abp@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12, <3.14"
+dependencies = [
+    "scikit-learn (>=1.8.0,<2.0.0)",
+    "torch (>=2.12.0,<3.0.0)",
+    "torchvision (>=0.27.0,<0.28.0)",
+    "lightning (>=2.6.5,<3.0.0)",
+    "torch-uncertainty @ git+https://github.com/torch-uncertainty/torch-uncertainty.git",
+    "huggingface-hub (>=1.17.0,<2.0.0)",
+    "rich (>=15.0.0,<16.0.0)",
+    "timm (>=1.0.27,<2.0.0)",
+    "ipykernel (>=7.2.0,<8.0.0)",
+    "ipywidgets (>=8.1.8,<9.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "ruff (>=0.15.15,<0.16.0)"
+]
+
+[tool.ruff]
+line-length = 80
+target-version = "py311"
+
+[tool.ruff.lint]
+# E: pycodestyle errors
+# F: pyflakes
+# I: isort (сортировка импортов)
+# B: flake8-bugbear (полезные баги)
+# UP: pyupgrade (обновление синтаксиса)
+select = ["E", "F", "I", "B", "UP"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
